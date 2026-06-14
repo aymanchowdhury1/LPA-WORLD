@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
+<body>
+    <nav id="auth-links"><a href="login.html">Login</a> <a href="register.html">Register</a></nav>
+    <div class="main-wrapper">
+        <div class="sidebar"><h3>Users</h3><div id="userList"></div></div>
+        <div class="content">
+            <input type="text" id="searchBox" placeholder="Search..." onkeyup="filterTable()">
+            <table id="invTable"><thead><tr id="headerRow"></tr></thead><tbody id="tableBody"></tbody></table>
+            <div id="controls" class="hidden">
+                <button onclick="openModal()">+ Add Item</button> <button onclick="addColumn()">+ Add Column</button>
+            </div>
+        </div>
+    </div>
+    <div id="itemModal" class="modal hidden">
+        <div class="modal-content">
+            <input type="hidden" id="editIndex">
+            <div id="modalInputs"></div>
+            <button onclick="saveItem()">Save</button>
+            <button onclick="document.getElementById('itemModal').classList.add('hidden')">Cancel</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
